@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   
-  ///FIX ROTATION OF TETROMINOS A THE EDGE 
+  //FIX ROTATION OF TETROMINOS A THE EDGE 
   function isAtRight() {
     return current.some(index=> (currentPosition + index + 1) % width === 0)  
   }
@@ -223,9 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < 199; i +=width) {
       const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
 
-      if(row.every(index => squares[index].classList.contains('taken'))) {
-        score +=10
-        scoreDisplay.innerHTML = score
+  //checking if every square in the class of row contains 'taken'    
+      if(row.every(index => squares[index].classList.contains('taken'))) { 
+        score +=10 
+        scoreDisplay.innerHTML = score 
         row.forEach(index => {
           squares[index].classList.remove('taken')
           squares[index].classList.remove('tetromino')
